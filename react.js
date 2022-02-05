@@ -1,21 +1,37 @@
 const root = document.getElementById("root");
-const h3 = React.createElement(
-    "h3", 
-    {
-        id: "title",
-        onMouseEnter: () => console.log('mouse enter'),
-    }, 
-    "Hello I'm a title"
+const Title = (
+    <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+        Hello I'm a title
+    </h3>
 );
-const btn = React.createElement(
-    "button", 
-    {
-        onClick: () => console.log('im clicked'),
-        style: {
+// const h3 = React.createElement(
+//     "h3", 
+//     {
+//         id: "title",
+//         onMouseEnter: () => console.log('mouse enter'),
+//     }, 
+//     "Hello I'm a title"
+// );
+const Button = (
+    <button 
+        style={{
             backgroundColor: "tomato",
-        },
-    }, 
-    "Click me"
+        }} 
+        onClick={() => console.log("im clicked")}
+    >
+        Click me
+    </button>
 );
-const container = React.createElement("div", null, [h3, btn])
+// const btn = React.createElement(
+//     "button", 
+//     {
+//         onClick: () => console.log('im clicked'),
+//         style: {
+//             backgroundColor: "tomato",
+//         },
+//     }, 
+//     "Click me"
+// );
+// const container = React.createElement("div", null, [h3, btn])
+const container = React.createElement("div", null, [Title, Button])
 ReactDOM.render(container, root);
