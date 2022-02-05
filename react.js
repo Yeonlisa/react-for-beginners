@@ -1,27 +1,28 @@
-function Btn({ text, onClick }) {
+function Btn({ text, fontSize = 12 }) {
     return (
         <button 
-            onClick={onClick}
             style={{
                 backgroundColor: "tomato",
                 color: "white",
                 padding: "10px 20px",
                 border: 0,
                 borderRadius: 10,
+                fontSize,
             }}
         >
             {text}
         </button>
     );
 }
-const MemorizedBtn = React.memo(Btn);
+Btn.propTypes = {
+    text: PropTypes.string.isRequired,
+    fontSize: PropTypes.number,
+};
 function App() {
-    const [value, setValue] = React.useState("Save Changes");
-    const changeValue = () => setValue("Revert Changes");
     return (
         <div>
-            <MemorizedBtn text={value} onClick={changeValue} />
-            <MemorizedBtn text="Continue" />
+            <Btn text="Save Changes" fontSize={18} />
+            <Btn text={"Continue"} />
         </div>
     );
 }
