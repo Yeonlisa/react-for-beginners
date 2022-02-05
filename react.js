@@ -5,7 +5,7 @@ const h3 = React.createElement(
         id: "title",
         onMouseEnter: () => console.log('mouse enter'),
     }, 
-    "Hello I'm a span"
+    "Hello I'm a title"
 );
 const btn = React.createElement(
     "button", 
