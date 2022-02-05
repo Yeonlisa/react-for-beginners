@@ -196,5 +196,60 @@ function App() {
 const root = document.getElementById("root");
 ReactDOM.render(<App />, root);
 ```
+## Btn
+### index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react-for-beginners</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" src="react.js"></script>
+</html>
+```
+### react.js
+```js
+function Btn({ text, fontSize = 12 }) {
+    return (
+        <button 
+            style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                fontSize,
+            }}
+        >
+            {text}
+        </button>
+    );
+}
+Btn.propTypes = {
+    text: PropTypes.string.isRequired,
+    fontSize: PropTypes.number,
+};
+function App() {
+    return (
+        <div>
+            <Btn text="Save Changes" fontSize={18} />
+            <Btn text={"Continue"} />
+        </div>
+    );
+}
+
+const root = document.getElementById("root");
+ReactDOM.render(<App />, root);
+```
 ## 느낀점
 바닐라JS로도 리액트를 표현할 수 있음을 알게되어 신기했고, 리액트에 관심을 더 갖게되는 계기가 되었다.
